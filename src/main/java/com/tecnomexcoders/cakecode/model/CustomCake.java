@@ -16,37 +16,37 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name="customcake")
+@Table(name = "customcake")
 public class CustomCake {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY )
-	@Column(name="customcake_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "customcake_id")
 	private Integer id;
-	@Column(name="card",length=150)
+	@Column(name = "card", length = 150)
 	private String card;
-	
+
 	@ManyToOne
-	@JoinColumn(name="fk_size_id")
+	@JoinColumn(name = "fk_size_id")
 	private Size size;
 	@ManyToOne
-	@JoinColumn(name="fk_flavor_id")
+	@JoinColumn(name = "fk_flavor_id")
 	private Flavor flavor;
 	@ManyToOne
-	@JoinColumn(name="fk_toppings1_id")
+	@JoinColumn(name = "fk_toppings1_id")
 	private Toppings1 toppings1;
 	@ManyToOne
-	@JoinColumn(name="fk_toppings2_id")
+	@JoinColumn(name = "fk_toppings2_id")
 	private Toppings2 toppings2;
 	@ManyToOne
-	@JoinColumn(name="fk_topper_id")
+	@JoinColumn(name = "fk_topper_id")
 	private Topper topper;
 	@ManyToOne
-	@JoinColumn(name="fk_design_id")
+	@JoinColumn(name = "fk_design_id")
 	private Design design;
-	
+
 	public CustomCake(CustomCakeDTO customCakeDTO) {
-		
+
 		this.id = customCakeDTO.getId();
 		this.card = customCakeDTO.getCard();
 		this.size = new Size(customCakeDTO.getSizeDTO());
@@ -56,10 +56,7 @@ public class CustomCake {
 		this.topper = new Topper(customCakeDTO.getTopperDTO());
 		this.design = new Design(customCakeDTO.getDesignDTO());
 	}
-	
-	
-	
-	
-	
-	
+
+
+
 }
