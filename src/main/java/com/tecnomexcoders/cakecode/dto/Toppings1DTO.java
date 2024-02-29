@@ -16,7 +16,7 @@ public class Toppings1DTO {
 	
 	
 	public Toppings1DTO(Toppings1 toppings1) {
-		super();
+		
 		this.id = toppings1.getId();
 		this.toppingImage = toppings1.getToppingImage();
 		this.description = toppings1.getDescription();

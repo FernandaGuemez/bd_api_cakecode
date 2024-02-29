@@ -19,7 +19,7 @@ public class FabricSizeService {
 
     public List<SizeDTO> createSizesDTO(List<Size> sizes) {
         List<SizeDTO> sizesDTO = new ArrayList<>();
-        sizes.forEach(size -> sizesDTO.add(new SizeDTO(size)));
+        sizes.stream().forEach(size -> sizesDTO.add(new SizeDTO(size)));
         return sizesDTO;
     }
 }

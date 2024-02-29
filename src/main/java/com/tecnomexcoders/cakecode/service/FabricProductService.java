@@ -18,7 +18,7 @@ public class FabricProductService {
 	}
 public List<ProductDTO> createProductsDTO(List<Product> products) {
 	List<ProductDTO> productsDTO = new ArrayList<>();
-	products.forEach(product -> productsDTO.add(new ProductDTO(product)));
+	products.stream().forEach(product -> productsDTO.add(new ProductDTO(product)));
 return productsDTO;
 }
 }

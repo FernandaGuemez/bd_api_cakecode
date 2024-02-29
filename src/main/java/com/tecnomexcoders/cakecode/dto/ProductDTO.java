@@ -20,6 +20,7 @@ public class ProductDTO {
 	private String size;
 	private String name;
 	private AdminUserDTO adminUserDTO;
+	private Integer adminuser_id;
 	
 	public ProductDTO(Product product) {
 		this.id = product.getId();
