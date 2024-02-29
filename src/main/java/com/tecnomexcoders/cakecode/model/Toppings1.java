@@ -1,6 +1,8 @@
 package com.tecnomexcoders.cakecode.model;
 
 
+import com.tecnomexcoders.cakecode.dto.Toppings1DTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,5 +30,15 @@ public class Toppings1 {
 	
 	@Column(length = 45)	
 	private String description;
+
+
+	public Toppings1(Toppings1DTO toppings1DTO) {
+		super();
+		this.id = toppings1DTO.getId();
+		this.toppingImage = toppings1DTO.getToppingImage();
+		this.description = toppings1DTO.getDescription();
+	}
+	
+	
 	
 }

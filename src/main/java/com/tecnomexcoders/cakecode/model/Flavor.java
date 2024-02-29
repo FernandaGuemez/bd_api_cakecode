@@ -1,5 +1,7 @@
 package com.tecnomexcoders.cakecode.model;
 
+import com.tecnomexcoders.cakecode.dto.FlavorDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,5 +25,13 @@ public class Flavor {
 	
 	@Column(length = 100)	
 	private String flavor;
+
+	public Flavor(FlavorDTO flavorDTO) {
+		super();
+		this.id = flavorDTO.getId();
+		this.flavor = flavorDTO.getFlavor();
+	}
+	
+	
 
 }
