@@ -1,5 +1,7 @@
 package com.tecnomexcoders.cakecode.model;
 
+import com.tecnomexcoders.cakecode.dto.AdminUserDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,6 +25,13 @@ public class AdminUser {
 	private String name;
 	@Column(length = 45)
 	private String password;
+	
+	
+	public AdminUser(AdminUserDTO adminUserDTO) {
+		this.id = adminUserDTO.getId();
+		this.name = adminUserDTO.getName();
+		this.password = adminUserDTO.getPassword();
+	}
 	
 	
 }
