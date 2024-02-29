@@ -23,7 +23,7 @@ public class CustomCakeDTO {
 		this.id = customCake.getId();
 		this.card = customCake.getCard();
 		this.flavorDTO = new FlavorDTO(customCake.getFlavor());
-		this.sizeDTO = new SizeDTO(customCake.getSize());;
+		this.sizeDTO = new SizeDTO(customCake.getSize());
 		this.topperDTO = new TopperDTO(customCake.getTopper());
 		this.toppings1DTO = new Toppings1DTO(customCake.getToppings1());
 		this.toppings2DTO = new Toppings2DTO(customCake.getToppings2());
