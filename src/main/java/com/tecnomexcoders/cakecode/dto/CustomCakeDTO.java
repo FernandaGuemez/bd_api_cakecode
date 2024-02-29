@@ -26,7 +26,7 @@ public class CustomCakeDTO {
 
 
 	public CustomCakeDTO(CustomCake customCake) {
-		super();
+		
 		this.id = customCake.getId();
 		this.card = customCake.getCard();
 		this.flavorDTO = new FlavorDTO(customCake.getFlavor());
@@ -38,6 +38,7 @@ public class CustomCakeDTO {
 
 	}
 
+	
 
 
 }

@@ -50,7 +50,7 @@ public class Product {
 
 
 	public Product(ProductDTO productDTO) {
-		super();
+		
 		this.id = productDTO.getId();
 		this.flavor = productDTO.getFlavor();
 		this.type = productDTO.getType();
@@ -61,6 +61,7 @@ public class Product {
 		this.size = productDTO.getSize();
 		this.name = productDTO.getName();
 		this.adminUser = new AdminUser(productDTO.getAdminUserDTO());
+		
 	}
 		
 

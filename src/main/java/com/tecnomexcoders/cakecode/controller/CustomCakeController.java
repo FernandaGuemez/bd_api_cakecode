@@ -15,9 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tecnomexcoders.cakecode.dto.CustomCakeDTO;
 import com.tecnomexcoders.cakecode.service.CustomCakeService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("/api/v1/ecommerce/customcake")
 @CrossOrigin(origins = "*")
+@Slf4j
 public class CustomCakeController {
 
     @Autowired
@@ -27,6 +30,7 @@ public class CustomCakeController {
     @PostMapping("/save")
     public ResponseEntity<CustomCakeDTO> save(@RequestBody CustomCakeDTO customCakeDTO) {
         try {
+        	log.info(""+customCakeDTO.getSize_id());
             return new ResponseEntity<>(customCakeService.save(customCakeDTO), HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

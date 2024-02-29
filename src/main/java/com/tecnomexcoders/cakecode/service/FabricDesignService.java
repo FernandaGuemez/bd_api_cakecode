@@ -19,7 +19,7 @@ public class FabricDesignService {
 
     public List<DesignDTO> createDesignsDTO(List<Design> designs) {
         List<DesignDTO> designsDTO = new ArrayList<>();
-        designs.forEach(design -> designsDTO.add(new DesignDTO(design)));
+        designs.stream().forEach(design -> designsDTO.add(new DesignDTO(design)));
         return designsDTO;
     }
 
