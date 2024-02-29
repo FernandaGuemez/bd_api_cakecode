@@ -49,7 +49,7 @@ public class DesignController {
 	public ResponseEntity<?> deleteById(@PathVariable Integer id){
 		try {
 			designService.findById(id);
-			designService.delete(id);
+			designService.deleteById(id);
 			return ResponseEntity.ok().build();
 		}catch (Exception e) {
 			return ResponseEntity.notFound().build();

@@ -32,7 +32,7 @@ public class DesignService {
     }
 
     // Delete design by id
-    public void delete(Integer id) {
+    public void deleteById(Integer id) {
         designRepository.deleteById(id);
     }
 

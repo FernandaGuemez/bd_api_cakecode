@@ -14,7 +14,6 @@ public class DesignDTO {
 	public DesignDTO(Design design){
 		this.id = design.getId();
 		this.designImage = design.getDesignImage();
-		
 		this.description = design.getDescription();
 		
 	}
