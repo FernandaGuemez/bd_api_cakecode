@@ -12,16 +12,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name="customcake")
-public class CustomCake {
-
+@Table(name="order")
+public class Order {
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY )
-	@Column(name="customcake_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="order_id")
 	private Integer id;
-	@Column(name="card",length=150)
-	private String card;
-	
-	
-	
+
 }
