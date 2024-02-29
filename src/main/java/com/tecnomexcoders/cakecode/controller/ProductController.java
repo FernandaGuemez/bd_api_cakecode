@@ -18,7 +18,7 @@ import com.tecnomexcoders.cakecode.dto.ProductDTO;
 import com.tecnomexcoders.cakecode.service.ProductService;
 
 @RestController
-@RequestMapping
+@RequestMapping("api/v1/ecommerce/products")
 @CrossOrigin(origins="*")
 public class ProductController {
 	
