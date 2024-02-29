@@ -1,5 +1,49 @@
 package com.tecnomexcoders.cakecode.model;
 
+import java.math.BigInteger;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@Table(name="user")
 public class User {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="user_id")
+	private Integer id;
+	
+	@Column( length= 45 )
+	private String name;
+	
+	@Column(name="last_name", length= 45 )
+	private String lastName;
+	
+	@Column( length= 250 )
+	private String address1;
+	
+	@Column(name="password", length=45)
+	private String password;
+	
+	@Column(name="phone_number", length= 45 )
+	private String phoneNumber;
+	
+	@Column(length= 45 )
+	private String email;
+	
+	@Column( length= 45)
+	private String payment;
+	
+	@Column(length= 250 )
+	private String address2;
+	
 
 }
