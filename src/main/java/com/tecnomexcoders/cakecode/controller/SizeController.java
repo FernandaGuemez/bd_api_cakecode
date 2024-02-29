@@ -15,44 +15,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.tecnomexcoders.cakecode.dto.SizeDTO;
 import com.tecnomexcoders.cakecode.service.SizeService;
+import lombok.extern.slf4j.Slf4j;
 
 
 @RestController
 @RequestMapping("api/v1/ecommerce/size")
 @CrossOrigin(origins = "*")
+@Slf4j
 public class SizeController {
-	
-	@Autowired 
+
+	@Autowired
 	private SizeService sizeService;
-	
+
 	@PostMapping("/save")
 	public ResponseEntity<SizeDTO> save(@RequestBody SizeDTO sizeDTO) {
-	        return new ResponseEntity<>(sizeService.save(sizeDTO), HttpStatus.CREATED);
-	    }
-	
+		log.info("" + sizeDTO.getPrice());
+		return new ResponseEntity<>(sizeService.save(sizeDTO), HttpStatus.CREATED);
+	}
+
 	@GetMapping()
 	public ResponseEntity<List<SizeDTO>> findAll() {
-	        return new ResponseEntity<>(sizeService.findAll(), HttpStatus.OK);
-	    }
-	
+		return new ResponseEntity<>(sizeService.findAll(), HttpStatus.OK);
+	}
+
 	@GetMapping("/{id}")
 	public ResponseEntity<SizeDTO> findById(@PathVariable Integer id) {
 		try {
 			return new ResponseEntity<>(sizeService.findById(id), HttpStatus.OK);
-			} catch (Exception e) {
-	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	        }
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 
-	    }
-	
+	}
+
 	@DeleteMapping("/{id}")
-	    public ResponseEntity<?> deleteById(@PathVariable Integer id) {
-	        try {
-	        	sizeService.findById(id);
-	        	sizeService.delete(id);
-	            return ResponseEntity.ok().build();
-	        } catch (Exception e) {
-	            return ResponseEntity.notFound().build();
-	        }
-	    }
+	public ResponseEntity<?> deleteById(@PathVariable Integer id) {
+		try {
+			sizeService.findById(id);
+			sizeService.delete(id);
+			return ResponseEntity.ok().build();
+		} catch (Exception e) {
+			return ResponseEntity.notFound().build();
+		}
+	}
 }

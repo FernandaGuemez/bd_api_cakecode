@@ -27,13 +27,15 @@ public class Size {
 
     private Double price;
 
+
     public Size(SizeDTO sizeDTO) {
         this.id = sizeDTO.getId();
         this.size = sizeDTO.getSize();
         this.sizeImg = sizeDTO.getSizeImg();
-     
+        this.price = sizeDTO.getPrice();
     }
 
 
-
 }
+
+
