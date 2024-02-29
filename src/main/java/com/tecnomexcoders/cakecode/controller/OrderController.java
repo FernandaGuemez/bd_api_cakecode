@@ -27,11 +27,16 @@ public class OrderController {
 	
 	@PostMapping("/save")
 	public ResponseEntity<OrderDTO> save(@RequestBody OrderDTO orderDTO){
-		return new ResponseEntity<>(orderService.save(orderDTO), HttpStatus.CREATED);
+		try {
+			return new ResponseEntity<>(orderService.save(orderDTO), HttpStatus.CREATED);
+		}catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		
 	}
 	
 	//Get All orders
-	@GetMapping()
+	@GetMapping
 	public ResponseEntity<List<OrderDTO>> findAll(){
 		return new ResponseEntity<>(orderService.findAll(),HttpStatus.OK);
 	}

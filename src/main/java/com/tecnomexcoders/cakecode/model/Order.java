@@ -16,16 +16,16 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name="order")
+@Table(name="orders")
 public class Order {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="order_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
 	@ManyToOne
-    @JoinColumn(name = "fk_user_id")
+    @JoinColumn(name = "fk_users_id")
     private User user;
 
 	public Order(OrderDTO orderDTO) {

@@ -21,9 +21,9 @@ public class FabricOrderService {
 		return new OrderDTO(order);
 	}
 	
-	public List<OrderDTO>crearOrdersDTO(List<Order>listOrders){
-		List<OrderDTO>listOrdersDTO = new ArrayList<>();
-		listOrders.stream().forEach(order->listOrdersDTO.add(crearOrderDTO(order)));
+	public List<OrderDTO> crearOrdersDTO(List<Order> listOrders){
+		List<OrderDTO> listOrdersDTO = new ArrayList<>();
+		listOrders.stream().forEach(order-> listOrdersDTO.add(crearOrderDTO(order)));
 		return listOrdersDTO;
 	}
 

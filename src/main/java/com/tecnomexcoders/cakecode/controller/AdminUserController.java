@@ -47,7 +47,7 @@ public class AdminUserController {
 	    public ResponseEntity<?> deleteById(@PathVariable Integer id) {
 	        try {
 	        	adminUserService.findById(id);
-	        	adminUserService.delete(id);
+	        	adminUserService.deleteById(id);
 	            return ResponseEntity.ok().build();
 	        } catch (Exception e) {
 	            return ResponseEntity.notFound().build();
