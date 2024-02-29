@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tecnomexcoders.cakecode.dto.OrderDTO;
-
+import com.tecnomexcoders.cakecode.dto.UserDTO;
 import com.tecnomexcoders.cakecode.repository.OrderRepository;
+import com.tecnomexcoders.cakecode.repository.UserRepository;
 
 
 @Service
@@ -18,13 +19,22 @@ public class OrderService {
 	@Autowired
 	private OrderRepository orderRepository;
 	
-	//save user
+	@Autowired
+	private FabricUserService fabricUserService;
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	//save order
 	public OrderDTO save(OrderDTO orderDTO) {
+		UserDTO userDTO= fabricUserService
+				.crearUserDTO(userRepository.findById(orderDTO.getUser_id()).get());
+		orderDTO.setUserDTO(userDTO);
 		return fabricOrderService.crearOrderDTO(orderRepository.save(fabricOrderService.crearOrder(orderDTO)));
 	}
 	
-	//Nos devuelve todos los users
-	public List<OrderDTO>findAll(){
+	//Nos devuelve todas las ordenes
+	public List<OrderDTO> findAll(){
 		return fabricOrderService.crearOrdersDTO(orderRepository.findAll());
 	}
 	

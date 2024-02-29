@@ -31,7 +31,7 @@ public class AdminUserService {
 		return fabricAdminUserService.createAdminUserDTO(adminUserRepository.findById(id).get());
 	}
 	
-	public void delete(Integer id) {
+	public void deleteById(Integer id) {
 		adminUserRepository.deleteById(id);
 	}
 	
