@@ -23,5 +23,6 @@ public class AdminUser {
 	private String name;
 	@Column(length = 45)
 	private String password;
-	 
+	
+	
 }
