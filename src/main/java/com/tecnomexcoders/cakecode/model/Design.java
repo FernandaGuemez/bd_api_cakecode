@@ -20,7 +20,7 @@ public class Design {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "design_id")
 	private Integer id;
-	@Column(name = "design", length = 150)
+	@Column(name = "design_img", length = 150)
 	private String designImage;
 	@Column(length = 45)
 	private String description;
