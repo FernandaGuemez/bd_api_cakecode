@@ -1,7 +1,5 @@
 package com.tecnomexcoders.cakecode.model;
 
-import java.math.BigInteger;
-
 import com.tecnomexcoders.cakecode.dto.UserDTO;
 
 import jakarta.persistence.Column;

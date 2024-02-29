@@ -1,5 +1,7 @@
 package com.tecnomexcoders.cakecode.model;
 
+import com.tecnomexcoders.cakecode.dto.OrderDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,4 +28,10 @@ public class Order {
     @JoinColumn(name = "fk_user_id")
     private User user;
 
+	public Order(OrderDTO orderDTO) {
+		this.id = orderDTO.getId();
+		this.user = new User(orderDTO.getUserDTO());
+	}
+
+	
 }
