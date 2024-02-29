@@ -19,7 +19,7 @@ public class ProductDTO {
 	private String productsImg;
 	private String size;
 	private String name;
-	private AdminUserDTO adminUserDto;
+	private AdminUserDTO adminUserDTO;
 	
 	public ProductDTO(Product product) {
 		this.id = product.getId();
@@ -31,7 +31,7 @@ public class ProductDTO {
 		this.productsImg = product.getProductsImg();
 		this.size = product.getSize();
 		this.name = product.getName();
-		this.adminUserDto = new AdminUserDTO(product.getAdminUser());
+		this.adminUserDTO = new AdminUserDTO(product.getAdminUser());
 	
 	}
 }
