@@ -1,4 +1,6 @@
 package com.tecnomexcoders.cakecode.dto;
+import com.tecnomexcoders.cakecode.model.User;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
@@ -16,15 +18,15 @@ public class UserDTO {
 	
 	
 	public UserDTO(User user) {
-		this.id = id;
-		this.name = name;
-		this.lastName = lastName;
-		this.address1 = address1;
-		this.password = password;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
-		this.payment = payment;
-		this.address2 = address2;
+		this.id = user.getId();
+		this.name = user.getLastName();
+		this.lastName = user.getLastName();
+		this.address1 = user.getAddress1();
+		this.password = user.getPassword();
+		this.phoneNumber = user.getPhoneNumber();
+		this.email = user.getEmail();
+		this.payment = user.getPayment();
+		this.address2 = user.getAddress2();
 	}
 	
 	
