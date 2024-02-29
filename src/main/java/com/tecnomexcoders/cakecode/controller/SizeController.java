@@ -15,13 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.tecnomexcoders.cakecode.dto.SizeDTO;
 import com.tecnomexcoders.cakecode.service.SizeService;
-import lombok.extern.slf4j.Slf4j;
+
 
 
 @RestController
 @RequestMapping("api/v1/ecommerce/size")
 @CrossOrigin(origins = "*")
-@Slf4j
 public class SizeController {
 
 	@Autowired
@@ -29,7 +28,6 @@ public class SizeController {
 
 	@PostMapping("/save")
 	public ResponseEntity<SizeDTO> save(@RequestBody SizeDTO sizeDTO) {
-		log.info("" + sizeDTO.getPrice());
 		return new ResponseEntity<>(sizeService.save(sizeDTO), HttpStatus.CREATED);
 	}
 
