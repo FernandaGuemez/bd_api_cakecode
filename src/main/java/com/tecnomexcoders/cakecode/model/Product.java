@@ -1,5 +1,6 @@
 package com.tecnomexcoders.cakecode.model;
 
+import com.tecnomexcoders.cakecode.dto.ProductDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -46,6 +47,21 @@ public class Product {
 	@ManyToOne
     @JoinColumn(name = "fk_adminuser_id")
     private AdminUser adminUser;
+
+
+	public Product(ProductDTO productDTO) {
+		super();
+		this.id = productDTO.getId();
+		this.flavor = productDTO.getFlavor();
+		this.type = productDTO.getType();
+		this.price = productDTO.getPrice();
+		this.stock = productDTO.getStock();
+		this.description = productDTO.getDescription();
+		this.productsImg = productDTO.getProductsImg();
+		this.size = productDTO.getSize();
+		this.name = productDTO.getName();
+		this.adminUser = new AdminUser(productDTO.getAdminUserDTO());
+	}
 		
 
 }
