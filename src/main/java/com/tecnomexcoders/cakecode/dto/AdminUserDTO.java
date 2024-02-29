@@ -12,10 +12,10 @@ public class AdminUserDTO {
 	private String name;
 	private String password;
 	
-	public AdminUserDTO(AdminUser adminuser) {
-		this.id = adminuser.getId();
-		this.name = adminuser.getName();
-		this.password = adminuser.getPassword();
+	public AdminUserDTO(AdminUser adminUser) {
+		this.id = adminUser.getId();
+		this.name = adminUser.getName();
+		this.password = adminUser.getPassword();
 	}
 	
 }
