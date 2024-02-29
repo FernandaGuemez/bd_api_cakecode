@@ -4,7 +4,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.tecnomexcoders.cakecode.dto.DesignDTO;
-import com.tecnomexcoders.cakecode.dto.SizeDTO;
 import com.tecnomexcoders.cakecode.repository.DesignRepository;
 
 @Service
