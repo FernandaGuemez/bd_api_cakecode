@@ -24,7 +24,7 @@ public class Toppings1 {
 	@Column(name = "toppings1_id")
 	private Integer id;
 
-	@Column(name="topping",length = 150)	
+	@Column(name="topping_img",length = 150)	
 	private String toppingImage;
 	
 	
@@ -33,7 +33,6 @@ public class Toppings1 {
 
 
 	public Toppings1(Toppings1DTO toppings1DTO) {
-		super();
 		this.id = toppings1DTO.getId();
 		this.toppingImage = toppings1DTO.getToppingImage();
 		this.description = toppings1DTO.getDescription();

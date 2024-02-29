@@ -22,14 +22,14 @@ public class Toppings2 {
 	@Column(name="toppings2_id")
 	private Integer id;
 	
-	@Column(name="topping",length=150)
+	@Column(name="topping_img",length=150)
 	private String toppingImage;
 	
 	@Column(length=45)
 	private String description;
 
 	public Toppings2(Toppings2DTO toppings2DTO) {
-		super();
+		
 		this.id = toppings2DTO.getId();
 		this.toppingImage = toppings2DTO.getToppingImage();
 		this.description = toppings2DTO.getDescription();

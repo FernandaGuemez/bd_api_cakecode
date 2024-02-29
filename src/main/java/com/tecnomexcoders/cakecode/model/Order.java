@@ -25,13 +25,14 @@ public class Order {
 	private Integer id;
 	
 	@ManyToOne
-    @JoinColumn(name = "fk_users_id")
+    @JoinColumn(name = "fk_user_id")
     private User user;
 
 	public Order(OrderDTO orderDTO) {
 		this.id = orderDTO.getId();
 		this.user = new User(orderDTO.getUserDTO());
 	}
+	
 
 	
 }

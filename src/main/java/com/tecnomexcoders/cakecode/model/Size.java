@@ -22,7 +22,7 @@ public class Size {
     @Column(length = 45)
     private String size;
 
-    @Column(name = "sizeimg", length = 150)
+    @Column(name = "size_img", length = 150)
     private String sizeImg;
 
     private Double price;
