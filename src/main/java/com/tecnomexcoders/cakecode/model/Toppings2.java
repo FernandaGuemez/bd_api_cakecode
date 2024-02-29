@@ -21,7 +21,7 @@ public class Toppings2 {
 	private Integer id;
 	
 	@Column(name="topping",length=150)
-	private String toppingsImage;
+	private String toppingImage;
 	
 	@Column(length=45)
 	private String description;
