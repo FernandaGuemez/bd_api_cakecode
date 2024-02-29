@@ -17,7 +17,14 @@ public class CustomCakeDTO {
 	private Toppings1DTO toppings1DTO;
 	private Toppings2DTO toppings2DTO;
 	private DesignDTO designDTO;
-	
+	private Integer flavor_id;
+	private Integer size_id;
+	private Integer topper_id;
+	private Integer toppings1_id;
+	private Integer toppings2_id;
+	private Integer design_id;
+
+
 	public CustomCakeDTO(CustomCake customCake) {
 		super();
 		this.id = customCake.getId();
@@ -28,11 +35,9 @@ public class CustomCakeDTO {
 		this.toppings1DTO = new Toppings1DTO(customCake.getToppings1());
 		this.toppings2DTO = new Toppings2DTO(customCake.getToppings2());
 		this.designDTO = new DesignDTO(customCake.getDesign());
-		
+
 	}
-	
-	
-	
-	
-	
+
+
+
 }
