@@ -1,5 +1,7 @@
 package com.tecnomexcoders.cakecode.model;
 
+import com.tecnomexcoders.cakecode.dto.CustomCakeDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -42,6 +44,21 @@ public class CustomCake {
 	@ManyToOne
 	@JoinColumn(name="fk_design_id")
 	private Design design;
+	
+	public CustomCake(CustomCakeDTO customCakeDTO) {
+		
+		this.id = customCakeDTO.getId();
+		this.card = customCakeDTO.getCard();
+		this.size = new Size(customCakeDTO.getSizeDTO());
+		this.flavor = new Flavor(customCakeDTO.getFlavorDTO());
+		this.toppings1 = new Toppings1(customCakeDTO.getToppings1DTO());
+		this.toppings2 = new Toppings2(customCakeDTO.getToppings2DTO());
+		this.topper = new Topper(customCakeDTO.getTopperDTO());
+		this.design = new Design(customCakeDTO.getDesignDTO());
+	}
+	
+	
+	
 	
 	
 	
