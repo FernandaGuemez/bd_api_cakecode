@@ -2,6 +2,8 @@ package com.tecnomexcoders.cakecode.model;
 
 import java.math.BigInteger;
 
+import com.tecnomexcoders.cakecode.dto.UserDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,6 +46,19 @@ public class User {
 	
 	@Column(length= 250 )
 	private String address2;
+
+	public User(UserDTO userDTO) {
+		this.id = userDTO.getId();
+		this.name = userDTO.getName();
+		this.lastName = userDTO.getLastName();
+		this.address1 = userDTO.getAddress1();
+		this.password = userDTO.getPassword();
+		this.phoneNumber = userDTO.getPhoneNumber();
+		this.email = userDTO.getEmail();
+		this.payment = userDTO.getPayment();
+		this.address2 = userDTO.getAddress2();
+	}
+	
 	
 
 }
