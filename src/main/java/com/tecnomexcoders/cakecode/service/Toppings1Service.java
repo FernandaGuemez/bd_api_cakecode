@@ -37,7 +37,7 @@ public class Toppings1Service {
 	}
 	
 	//Delete topping by id
-	public void delete(Integer id) {
+	public void deleteById(Integer id) {
 		toppings1Repository.deleteById(id);
 	}
 }
