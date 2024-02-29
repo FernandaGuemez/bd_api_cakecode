@@ -1,5 +1,6 @@
 package com.tecnomexcoders.cakecode.model;
 
+import com.tecnomexcoders.cakecode.dto.SizeDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,5 +26,14 @@ public class Size {
     private String sizeImg;
 
     private Double price;
+
+    public Size(SizeDTO sizeDTO) {
+        this.id = sizeDTO.getId();
+        this.size = sizeDTO.getSize();
+        this.sizeImg = sizeDTO.getSizeImg();
+     
+    }
+
+
 
 }
