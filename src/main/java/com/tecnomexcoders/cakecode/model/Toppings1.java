@@ -25,6 +25,7 @@ public class Toppings1 {
 	@Column(name="topping",length = 150)	
 	private String toppingImage;
 	
+	
 	@Column(length = 45)	
 	private String description;
 	
