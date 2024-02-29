@@ -20,37 +20,37 @@ import com.tecnomexcoders.cakecode.service.TopperService;
 @CrossOrigin(origins = "*")
 public class TopperController {
 
-	@Autowired 
+	@Autowired
 	private TopperService topperService;
-	
+
 	@PostMapping("/save")
 	public ResponseEntity<TopperDTO> save(@RequestBody TopperDTO topperDTO) {
-	        return new ResponseEntity<>(topperService.save(topperDTO), HttpStatus.CREATED);
-	    }
-	
+		return new ResponseEntity<>(topperService.save(topperDTO), HttpStatus.CREATED);
+	}
+
 	@GetMapping()
 	public ResponseEntity<List<TopperDTO>> findAll() {
-	        return new ResponseEntity<>(topperService.findAll(), HttpStatus.OK);
-	    }
-	
+		return new ResponseEntity<>(topperService.findAll(), HttpStatus.OK);
+	}
+
 	@GetMapping("/{id}")
 	public ResponseEntity<TopperDTO> findById(@PathVariable Integer id) {
 		try {
 			return new ResponseEntity<>(topperService.findById(id), HttpStatus.OK);
-			} catch (Exception e) {
-	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	        }
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 
-	    }
-	
+	}
+
 	@DeleteMapping("/{id}")
-	    public ResponseEntity<?> deleteById(@PathVariable Integer id) {
-	        try {
-	        	topperService.findById(id);
-	        	topperService.delete(id);
-	            return ResponseEntity.ok().build();
-	        } catch (Exception e) {
-	            return ResponseEntity.notFound().build();
-	        }
-	    }
+	public ResponseEntity<?> deleteById(@PathVariable Integer id) {
+		try {
+			topperService.findById(id);
+			topperService.delete(id);
+			return ResponseEntity.ok().build();
+		} catch (Exception e) {
+			return ResponseEntity.notFound().build();
+		}
+	}
 }

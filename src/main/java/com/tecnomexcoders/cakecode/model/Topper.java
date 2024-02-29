@@ -14,27 +14,27 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name="topper")
+@Table(name = "topper")
 public class Topper {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="topper_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "topper_id")
 	private Integer id;
-	
-	@Column(name="topper", length=150)
+
+	@Column(name = "topper_img", length = 150)
 	private String topperImage;
-	
-	@Column(length=45)
+
+	@Column(length = 45)
 	private String description;
 
 	public Topper(TopperDTO topperDTO) {
-		super();
+
 		this.id = topperDTO.getId();
 		this.topperImage = topperDTO.getTopperImage();
 		this.description = topperDTO.getDescription();
 	}
 
-	
-	
+
+
 }
