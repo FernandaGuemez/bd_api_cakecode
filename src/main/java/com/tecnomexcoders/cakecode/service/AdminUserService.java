@@ -10,33 +10,30 @@ import com.tecnomexcoders.cakecode.repository.AdminUserRepository;
 
 @Service
 public class AdminUserService {
-	
+
 	@Autowired
 	private AdminUserRepository adminUserRepository;
-	
+
 	@Autowired
 	private FabricAdminUserService fabricAdminUserService;
-	
-	public AdminUserDTO save(AdminUserDTO adminUserDTO) { 
-		return fabricAdminUserService
-				.createAdminUserDTO(adminUserRepository.save(fabricAdminUserService.createAdminUser(adminUserDTO)));
+
+	public AdminUserDTO save(AdminUserDTO adminUserDTO) {
+		return fabricAdminUserService.createAdminUserDTO(
+				adminUserRepository.save(fabricAdminUserService.createAdminUser(adminUserDTO)));
 	}
-	
-	public List<AdminUserDTO> findAll(){ 
+
+	public List<AdminUserDTO> findAll() {
 		return fabricAdminUserService.createAdminUsersDTO(adminUserRepository.findAll());
 	}
-	
-	
+
 	public AdminUserDTO findById(Integer id) {
 		return fabricAdminUserService.createAdminUserDTO(adminUserRepository.findById(id).get());
 	}
-	
+
 	public void deleteById(Integer id) {
 		adminUserRepository.deleteById(id);
 	}
-	
+
 }
-
-
 
 
