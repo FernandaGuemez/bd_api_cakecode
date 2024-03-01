@@ -18,17 +18,17 @@ import lombok.NoArgsConstructor;
 @Table(name = "toppings1")
 
 public class Toppings1 {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "toppings1_id")
 	private Integer id;
 
-	@Column(name="topping_img",length = 150)	
+	@Column(name = "topping_img", length = 150)
 	private String toppingImage;
-	
-	
-	@Column(length = 45)	
+
+
+	@Column(length = 45)
 	private String description;
 
 
@@ -37,7 +37,4 @@ public class Toppings1 {
 		this.toppingImage = toppings1DTO.getToppingImage();
 		this.description = toppings1DTO.getDescription();
 	}
-	
-	
-	
 }

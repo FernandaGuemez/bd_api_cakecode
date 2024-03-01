@@ -14,35 +14,35 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name="users")
+@Table(name = "users")
 public class User {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="user_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "user_id")
 	private Integer id;
-	
-	@Column( length= 45 )
+
+	@Column(length = 45)
 	private String name;
-	
-	@Column(name="last_name", length= 45 )
+
+	@Column(name = "last_name", length = 45)
 	private String lastName;
-	
-	@Column( length= 250 )
+
+	@Column(length = 250)
 	private String address1;
-	
-	@Column(name="password", length=45)
+
+	@Column(name = "password", length = 45)
 	private String password;
-	
-	@Column(name="phone_number", length= 45 )
+
+	@Column(name = "phone_number", length = 45)
 	private String phoneNumber;
-	
-	@Column(length= 45 )
+
+	@Column(length = 45)
 	private String email;
-	
-	@Column( length= 45)
+
+	@Column(length = 45)
 	private String payment;
-	
-	@Column(length= 250 )
+
+	@Column(length = 250)
 	private String address2;
 
 	public User(UserDTO userDTO) {
@@ -56,7 +56,4 @@ public class User {
 		this.payment = userDTO.getPayment();
 		this.address2 = userDTO.getAddress2();
 	}
-	
-	
-
 }
