@@ -20,22 +20,22 @@ import com.tecnomexcoders.cakecode.service.Toppings1Service;
 @RequestMapping("api/v1/ecommerce/toppings1")
 @CrossOrigin(origins = "*")
 public class Toppings1Controller {
-	
-	@Autowired
-	private Toppings1Service toppings1Service;
-	
-	@PostMapping("/save")
-	public ResponseEntity<Toppings1DTO> save(@RequestBody Toppings1DTO toppings1DTO){
-		return new ResponseEntity<>(toppings1Service.save(toppings1DTO), HttpStatus.CREATED);
-	}
-	
-	//Get all toppings1
-	@GetMapping()
-	public ResponseEntity<List<Toppings1DTO>> findAll(){
-		return new ResponseEntity<>(toppings1Service.findAll(),HttpStatus.OK);
-	}
-	
-	// Get id toppings1
+
+    @Autowired
+    private Toppings1Service toppings1Service;
+
+    @PostMapping("/save")
+    public ResponseEntity<Toppings1DTO> save(@RequestBody Toppings1DTO toppings1DTO) {
+        return new ResponseEntity<>(toppings1Service.save(toppings1DTO), HttpStatus.CREATED);
+    }
+
+    // Get all toppings1
+    @GetMapping()
+    public ResponseEntity<List<Toppings1DTO>> findAll() {
+        return new ResponseEntity<>(toppings1Service.findAll(), HttpStatus.OK);
+    }
+
+    // Get id toppings1
     @GetMapping("/{id}")
     public ResponseEntity<Toppings1DTO> findById(@PathVariable Integer id) {
         try {
@@ -56,6 +56,6 @@ public class Toppings1Controller {
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
-    }	
+    }
 
 }
