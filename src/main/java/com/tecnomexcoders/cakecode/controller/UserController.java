@@ -21,21 +21,21 @@ import com.tecnomexcoders.cakecode.service.UserService;
 @RequestMapping("api/v1/ecommerce/user")
 @CrossOrigin(origins = "*")
 public class UserController {
-	@Autowired
-	private UserService userService;
-	
-	@PostMapping("/save")
-	public ResponseEntity<UserDTO> save(@RequestBody UserDTO userDTO){
-		return new ResponseEntity<>(userService.save(userDTO), HttpStatus.CREATED);
-	}
-	
-	//Get All users
-	@GetMapping()
-	public ResponseEntity<List<UserDTO>> findAll(){
-		return new ResponseEntity<>(userService.findAll(),HttpStatus.OK);
-	}
-	
-	// Get id autor
+    @Autowired
+    private UserService userService;
+
+    @PostMapping("/save")
+    public ResponseEntity<UserDTO> save(@RequestBody UserDTO userDTO) {
+        return new ResponseEntity<>(userService.save(userDTO), HttpStatus.CREATED);
+    }
+
+    // Get All users
+    @GetMapping()
+    public ResponseEntity<List<UserDTO>> findAll() {
+        return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
+    }
+
+    // Get id autor
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> findById(@PathVariable Integer id) {
         try {
@@ -56,5 +56,5 @@ public class UserController {
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
-    }	
+    }
 }

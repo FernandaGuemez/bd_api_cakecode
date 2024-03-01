@@ -1,5 +1,6 @@
 package com.tecnomexcoders.cakecode.model;
 
+import java.util.List;
 import com.tecnomexcoders.cakecode.dto.CustomCakeDTO;
 
 import jakarta.persistence.Column;
@@ -8,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -44,6 +47,13 @@ public class CustomCake {
 	@ManyToOne
 	@JoinColumn(name = "fk_design_id")
 	private Design design;
+
+
+	@ManyToMany
+	@JoinTable(name = "orders_has_customcake", joinColumns = @JoinColumn(name = "fk_orders_id"),
+			inverseJoinColumns = @JoinColumn(name = "fk_customcake_id"))
+	private List<Order> customCakeOfOrders;
+
 
 	public CustomCake(CustomCakeDTO customCakeDTO) {
 

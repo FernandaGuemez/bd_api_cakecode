@@ -1,6 +1,8 @@
 package com.tecnomexcoders.cakecode.dto;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import com.tecnomexcoders.cakecode.model.Product;
 
 import lombok.Data;
@@ -21,7 +23,8 @@ public class ProductDTO {
 	private String name;
 	private AdminUserDTO adminUserDTO;
 	private Integer adminuser_id;
-	
+	// private List<OrderDTO> listOrderDTO;
+
 	public ProductDTO(Product product) {
 		this.id = product.getId();
 		this.flavor = product.getFlavor();
@@ -33,6 +36,8 @@ public class ProductDTO {
 		this.size = product.getSize();
 		this.name = product.getName();
 		this.adminUserDTO = new AdminUserDTO(product.getAdminUser());
-	
+		// this.listOrderDTO = new ArrayList<>();
+		// product.getProductsOfOrders()
+		// .forEach(productOfOrder -> listOrderDTO.add(new OrderDTO(productOfOrder)));
 	}
 }

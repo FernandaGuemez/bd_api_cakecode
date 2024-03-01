@@ -22,26 +22,26 @@ import com.tecnomexcoders.cakecode.service.OrderService;
 @RequestMapping("api/v1/ecommerce/order")
 @CrossOrigin(origins = "*")
 public class OrderController {
-	@Autowired
-	private OrderService orderService;
-	
-	@PostMapping("/save")
-	public ResponseEntity<OrderDTO> save(@RequestBody OrderDTO orderDTO){
-		try {
-			return new ResponseEntity<>(orderService.save(orderDTO), HttpStatus.CREATED);
-		}catch(Exception e) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-		
-	}
-	
-	//Get All orders
-	@GetMapping
-	public ResponseEntity<List<OrderDTO>> findAll(){
-		return new ResponseEntity<>(orderService.findAll(),HttpStatus.OK);
-	}
-	
-	// Get id orders
+    @Autowired
+    private OrderService orderService;
+
+    @PostMapping("/save")
+    public ResponseEntity<OrderDTO> save(@RequestBody OrderDTO orderDTO) {
+        try {
+            return new ResponseEntity<>(orderService.save(orderDTO), HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+    }
+
+    // Get All orders
+    @GetMapping
+    public ResponseEntity<List<OrderDTO>> findAll() {
+        return new ResponseEntity<>(orderService.findAll(), HttpStatus.OK);
+    }
+
+    // Get id orders
     @GetMapping("/{id}")
     public ResponseEntity<OrderDTO> findById(@PathVariable Integer id) {
         try {
@@ -62,6 +62,6 @@ public class OrderController {
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
-    }	
+    }
 
 }

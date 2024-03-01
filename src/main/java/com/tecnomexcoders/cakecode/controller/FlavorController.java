@@ -19,38 +19,38 @@ import com.tecnomexcoders.cakecode.service.FlavorService;
 
 @RestController
 @RequestMapping("api/v1/ecommerce/flavor")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "*")
 public class FlavorController {
 
 	@Autowired
 	private FlavorService flavorService;
-	
+
 	@PostMapping("/save")
-	public ResponseEntity<FlavorDTO> save(@RequestBody FlavorDTO flavorDTO){
-		return new ResponseEntity<>(flavorService.save(flavorDTO),HttpStatus.CREATED);
+	public ResponseEntity<FlavorDTO> save(@RequestBody FlavorDTO flavorDTO) {
+		return new ResponseEntity<>(flavorService.save(flavorDTO), HttpStatus.CREATED);
 	}
-	
+
 	@GetMapping
-	public ResponseEntity<List<FlavorDTO>> findAll(){
-		return new ResponseEntity<>(flavorService.findAll(),HttpStatus.OK);
+	public ResponseEntity<List<FlavorDTO>> findAll() {
+		return new ResponseEntity<>(flavorService.findAll(), HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/{id}")
-	public ResponseEntity<FlavorDTO> findById(@PathVariable Integer id){
+	public ResponseEntity<FlavorDTO> findById(@PathVariable Integer id) {
 		try {
 			return new ResponseEntity<>(flavorService.findById(id), HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND); 
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	
+
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> deleteById(@PathVariable Integer id){
+	public ResponseEntity<?> deleteById(@PathVariable Integer id) {
 		try {
 			flavorService.findById(id);
 			flavorService.delete(id);
 			return ResponseEntity.ok().build();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			return ResponseEntity.notFound().build();
 		}
 	}
